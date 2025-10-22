@@ -1,5 +1,10 @@
 /* Structuring */
 
+html {
+    background-color: black;
+    font-family: "Trebuchet MS", sans-serif;
+}
+
 header {
   background-color: rgb(119, 194, 255);
   color: rgb(0, 0, 0);
@@ -30,6 +35,10 @@ h1 {
   font-size: 50px;
   font-weight: bolder;
   color: rgb(255, 255, 255);
+}
+
+h4 {
+    font-size: x-large;
 }
 
 h6 {
