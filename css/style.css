@@ -4,10 +4,11 @@
 header {
     background-color: rgb(119, 194, 255);
     color: rgb(0, 0, 0);
-    padding: 40px;
+    padding: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     font-size: medium;
 }
 
@@ -33,6 +34,6 @@ a {
 
 .logo_circle {
     border-radius: 50%;
-    width: 8%;
-    height: 8%;
+    width: 5%;
+    height: 5%;
 }
