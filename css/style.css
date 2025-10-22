@@ -12,6 +12,7 @@ header {
 }
 
 nav {
+  color: black;
   display: flex;
   flex-direction: row;
   justify-content: end;
@@ -29,9 +30,21 @@ a {
   color: black;
 }
 
-.note {
+h1 {
+  font-size: 50px;
+  font-weight: bolder;
+  margin-top: 30px;
+  color: rgb(255, 255, 255);
+}
+
+h6 {
   font-size: small;
   border-top: 1px solid #222;
+}
+
+p {
+  color: gainsboro;
+  font-size: large;
 }
 
 /* Images */
