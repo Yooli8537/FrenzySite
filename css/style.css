@@ -1,39 +1,42 @@
-
 /* Structuring */
 
 header {
-    background-color: rgb(119, 194, 255);
-    color: rgb(0, 0, 0);
-    padding: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    font-size: medium;
+  background-color: rgb(119, 194, 255);
+  color: rgb(0, 0, 0);
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: medium;
 }
 
 nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
 }
 
 footer {
-    background-color: rgb(21, 173, 255);
-    padding: 40px;
-    color: rgb(0, 0, 0);
+  background-color: rgb(21, 173, 255);
+  padding: 40px;
+  color: rgb(0, 0, 0);
 }
 
 /* Text */
 
 a {
-    color: black;
+  color: black;
+}
+
+.note {
+  font-size: small;
 }
 
 /* Images */
 
 .logo_circle {
-    border-radius: 50%;
-    width: 5%;
-    height: 5%;
+  border-radius: 50%;
+  width: 5%;
+  height: 5%;
 }
