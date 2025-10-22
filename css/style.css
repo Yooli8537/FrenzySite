@@ -28,3 +28,11 @@ footer {
 a {
     color: black;
 }
+
+/* Images */
+
+.logo_circle {
+    border-radius: 50%;
+    width: 8%;
+    height: 8%;
+}
