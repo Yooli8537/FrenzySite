@@ -1,0 +1,25 @@
+
+/* Structuring */
+
+header {
+    background-color: rgb(119, 194, 255);
+    color: rgb(0, 0, 0);
+    padding: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 100%;
+    font-size: 1em;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+footer {
+    background-color: rgb(21, 173, 255);
+    padding: 40px;
+    color: rgb(0, 0, 0);
+}
