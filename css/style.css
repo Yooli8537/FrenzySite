@@ -38,28 +38,28 @@ h1 {
 }
 
 h2 {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
   color: rgb(255, 255, 255);
 }
 
 h3 {
-  font-size: large;
+  font-size: 18px;
   font-weight: bold;
   color: rgb(255, 255, 255);
 }
 
 h4 {
-  font-size: x-large;
+  font-size: 15px;
 }
 
 h5 {
-  font-size: large;
+  font-size: 12px;
   color: white;
 }
 
 h6 {
-  font-size: small;
+  font-size: 10px;
   border-top: 1px solid #222;
 }
 
@@ -96,7 +96,19 @@ a:hover {
   color: rgb(21, 173, 255);
 }
 
-/* Cards */
+/* Info Pages Build */
+
+.divider {
+  display: block;
+  background-color: #000000;
+  border: 2px solid #b9edff;
+  border-radius: 12px;
+  padding: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(159, 197, 255, 0.5);
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
 
 .card {
   display: block;
