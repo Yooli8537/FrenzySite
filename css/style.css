@@ -1,8 +1,8 @@
 /* Structuring */
 
 html {
-    background-color: black;
-    font-family: "Trebuchet MS", sans-serif;
+  background-color: black;
+  font-family: "Trebuchet MS", sans-serif;
 }
 
 header {
@@ -38,7 +38,7 @@ h1 {
 }
 
 h4 {
-    font-size: x-large;
+  font-size: x-large;
 }
 
 h5 {
@@ -57,16 +57,16 @@ p {
 }
 
 a {
-    color: gray;
+  color: gray;
 }
 
 .nav {
-    color: black;
+  color: black;
 }
 
 .note {
-    font-style: italic;
-    font-size: medium;
+  font-style: italic;
+  font-size: medium;
 }
 
 /* Images */
@@ -80,8 +80,8 @@ a {
 /* Decoration */
 
 a:hover {
-    text-decoration: underline;
-    color: rgb(21, 173, 255);
+  text-decoration: underline;
+  color: rgb(21, 173, 255);
 }
 
 /* Button Shimmer Effect */
@@ -93,7 +93,7 @@ a:hover {
 }
 
 .button.is-shimmer::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -75%;
