@@ -33,30 +33,69 @@
             <div class="pagetitle">
                 <h1>Weapons</h1>
                 <h2>
-                    Frenzy has a lot of weapons to offer in order for you to try and find what weapons work best
-                    with what characters. Since the weapons page in-game shouldn't be too overwhelming, some less
-                    important stats and additional info isn't shown. This is why this page exists. Since there's
-                    more room to work with, players can more easily view all of the info they want on whatever
-                    weapon they want.
+                    Frenzy has a lot of weapons to offer. Since the weapons page in-game shouldn't be too overwhelming,
+                    some less important stats and additional info isn't shown. This is why this page exists. Since
+                    there's more room to work with, players can more easily view all of the info they want on whatever
+                    weapon they want. Additionally, you can compare wepaons faster here, so that you can more quickly
+                    find out what weapons work best with what characters.
                 </h2>
             </div>
         </div>
 
         <!-- Assault Rifles -->
         <div class="container">
-            <h2 class="title is-4">Assault Rifles</h2>
+            <div class="divider">
+                <h2>Primary Weapons: Assault Rifles</h2>
+                <h3>
+                    Assault rifles are the default weapon class. They fire hard, the fire fast, and they do it
+                    automatically. Every champion excluding legends has access to assault rifles. They are a reliable
+                    option that you really can't go wrong with.
+                </h3>
+            </div>
             <div class="columns is-multiline is-centered" id="assault-rifles-grid"></div>
         </div>
 
         <!-- Burst Rifles -->
         <div class="container">
-            <h2 class="title is-4">Burst Rifles</h2>
+            <div class="divider">
+                <h2>Primary Weapons: Burst Rifles</h2>
+                <h3>
+                    Burst rifles are similar to assault rifles, but they only shoot a few bullets at a time,
+                    go on cooldown and then shoot again a second or so later. They are basically a direct
+                    counterpart to the assault rifle. You can play them like an assault rifle or you can play them the
+                    way that some people find annoying (that I love to do).
+                </h3>
+            </div>
             <div class="columns is-multiline is-centered" id="burst-rifles-grid"></div>
+        </div>
+
+        <!-- DMRs -->
+        <div class="container">
+            <div class="divider">
+                <h2>Primary Weapons: DMRs</h2>
+                <h3>
+                    DMRs are basically a hybrid of assault rifles and sniper rifles: They average out all of the stats
+                    between them in order to create a monster that you can play like either one. With fast, single-fire
+                    shots that deal heavy damage, you can use a DMR in both long range and medium range combat
+                    effectively. You can also peek around a corner, fire one shot and repeat if you're that kind of guy.
+                </h3>
+            </div>
+            <div class="columns is-multiline is-centered" id="dmrs-grid"></div>
         </div>
 
         <!-- Snipers -->
         <div class="container">
-            <h2 class="title is-4">Snipers</h2>
+            <div class="divider">
+                <h2>Primary Weapons: Snipers</h2>
+                <h3>
+                    Snipers are for those who want the most powerful of all weapons. With most of them capable of
+                    killing enemies in one shot, you do not want to mess with a trained sniper. However, this comes with
+                    a significan't drawback: most high-end snipers need to be placed on the ground to be used, and
+                    you're very vulnerable whilst doing so. So you better have a good position, otherwise you're toast.
+                    Of course, you can still move about with the less powerful snipers, but you'll only be able to
+                    oneshot your opponents when shooting them in the head.
+                </h3>
+            </div>
             <div class="columns is-multiline is-centered" id="snipers-grid"></div>
         </div>
     </section>
@@ -89,15 +128,15 @@
             {
                 name: "AK-47",
                 image: "../images/yooli8537_logo.jpg",
-                description: "Reliable assault rifle with balanced stats.",
-                stats: ["Damage: 35", "Fire Rate: 600 RPM", "Range: 50m", "TTK: 3s"],
+                description: "The AK-47 is the default primary weapon in Frenzy. It's actually a pretty decent option, offering the most average stats so that it's always somewhat viable in any situation.",
+                stats: ["Damage: 35", "Headshot Multiplier: 2", "Fire Rate: 600 RPM", "Dropoff: 30m", "Spread: 4°"],
                 pageUrl: "../index.html"
             },
             {
                 name: "M4",
                 image: "../images/yooli8537_logo.jpg",
                 description: "Accurate and fast firing assault rifle.",
-                stats: ["Damage: 30", "Fire Rate: 650 RPM", "Range: 45m", "TTK: 2.8s"],
+                stats: ["Damage: 30", "Headshot Multiplier: 2", "Fire Rate: 650 RPM", "Dropoff: 45m", "Spread: 5°"],
                 pageUrl: "../index.html"
             }
         ];
@@ -107,17 +146,27 @@
                 name: "Burst Rifle 1",
                 image: "../images/yooli8537_logo.jpg",
                 description: "Shoots 3 rounds per trigger pull.",
-                stats: ["Damage: 25", "Fire Rate: 800 RPM", "Range: 30m", "TTK: 4s"],
+                stats: ["Damage: 25", "Headshot Multiplier: 2", "Fire Rate: 800 RPM", "Dropoff: 30m", "Spread: 3°"],
+                pageUrl: "../index.html"
+            }
+        ];
+
+        const dmrs = [
+            {
+                name: "Barrett",
+                image: "../images/yooli8537_logo.jpg",
+                description: "An absolute war machine. With the barrett by your side, nothing can stop you. Well maybe someone could shoot you, but other than that you're unstoppable.",
+                stats: ["Damage: 200", "Headshot Multiplier: 2.5", "Fire Rate: 30 RPM", "Dropoff: none", "Spread: 0°", "Setup time: 3s"],
                 pageUrl: "../index.html"
             }
         ];
 
         const snipers = [
             {
-                name: "Sniper 1",
+                name: "Barrett",
                 image: "../images/yooli8537_logo.jpg",
-                description: "One-shot potential for headshots.",
-                stats: ["Damage: 90", "Fire Rate: 50 RPM", "Range: 100m", "TTK: 1.2s"],
+                description: "An absolute war machine. With the barrett by your side, nothing can stop you. Well maybe someone could shoot you, but other than that you're unstoppable.",
+                stats: ["Damage: 200", "Headshot Multiplier: 2.5", "Fire Rate: 30 RPM", "Dropoff: none", "Spread: 0°", "Setup time: 3s"],
                 pageUrl: "../index.html"
             }
         ];
@@ -145,6 +194,7 @@
 
         populateGrid('assault-rifles-grid', assaultRifles);
         populateGrid('burst-rifles-grid', burstRifles);
+        populateGrid('dmrs-grid', dmrs);
         populateGrid('snipers-grid', snipers);
 
         // Modal Elements
