@@ -10,94 +10,181 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
-<header>
-    <nav>
-        <a href="../index.html" class="nav">Home</a> &nbsp;|&nbsp;
-        <a href="https://roblox.com" class="nav">Play Now!</a> &nbsp;|&nbsp;
-        <a href="champions.html" class="nav">Champions</a> &nbsp;|&nbsp;
-        <a href="weapons.html" class="nav">Weapons</a> &nbsp;|&nbsp;
-        <a href="archives.html" class="nav">Archives</a> &nbsp;|&nbsp;
-        <!-- /*  (Patch Notes, Community Stuff, Dev Log) */ -->
-        <a href="techniques.html" class="nav">Techniques</a> &nbsp;|&nbsp;
-        <a href="faq.html" class="nav">FAQ</a> &nbsp;|&nbsp;
-        <a href="https://github.com/Yooli8537/FrenzySite" class="nav">Report Issues</a>
-    </nav>
-    <img src="../images/yooli8537_logo.jpg" class="logo_circle">
-</header>
-
 <body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="../index.html" class="nav">Home</a> &nbsp;|&nbsp;
+            <a href="https://roblox.com" class="nav">Play Now!</a> &nbsp;|&nbsp;
+            <a href="champions.html" class="nav">Champions</a> &nbsp;|&nbsp;
+            <a href="weapons.html" class="nav">Weapons</a> &nbsp;|&nbsp;
+            <a href="archives.html" class="nav">Archives</a>&nbsp;|&nbsp;
+            <!-- /*  (Patch Notes, Community Stuff, Dev Log) */ -->
+            <a href="techniques.html" class="nav">Techniques</a> &nbsp;|&nbsp;
+            <a href="faq.html" class="nav">FAQ</a> &nbsp;|&nbsp;
+            <a href="https://github.com/Yooli8537/FrenzySite" class="nav">Report Issues</a>
+        </nav>
+        <img src="../images/yooli8537_logo.jpg" class="logo_circle">
+    </header>
+
+    <!-- Main Content -->
     <section class="section">
         <div class="container">
-            <div class="columns is-multiline is-centered has-text-centered">
-                <div class="pagetitle">
-                    <h1>Weapons</h1>
-                    <h2>
-                        Frenzy has a lot of weapons to offer in order for you to try and find what weapons work best
-                        with what characters. Since the weapons page in-game shouldn't be too overwhelming, some less
-                        important stats and additional info isn't shown. This is why this page exists. Since there's
-                        more room to work with, players can more easily view all of the info they want on whatever
-                        weapon they want.
-                    </h2>
-                </div>
+            <div class="pagetitle">
+                <h1>Weapons</h1>
+                <h2>
+                    Frenzy has a lot of weapons to offer in order for you to try and find what weapons work best
+                    with what characters. Since the weapons page in-game shouldn't be too overwhelming, some less
+                    important stats and additional info isn't shown. This is why this page exists. Since there's
+                    more room to work with, players can more easily view all of the info they want on whatever
+                    weapon they want.
+                </h2>
             </div>
         </div>
 
+        <!-- Assault Rifles -->
         <div class="container">
-            <div class="columns is-multiline is-centered has-text-centered">
-                <div class="divider">
-                    <h2>Primary Weapons: Assault Rifles</h2>
-                    <h3>
-                        Assault rifles are the default weapon class. Every champion excluding legends has access to
-                        assault rifles. They are a reliable option that you can always fall back to in a pinch.
-                    </h3>
-                </div>
-            </div>
+            <h2 class="title is-4">Assault Rifles</h2>
+            <div class="columns is-multiline is-centered" id="assault-rifles-grid"></div>
         </div>
 
+        <!-- Burst Rifles -->
         <div class="container">
-            <div class="columns is-multiline is-centered">
-                <div class="column is-one-quarter has-text-centered">
-                    <a href="../index.html" class="card">
-                        <figure class="image is-square">
-                            <img src="../images/yooli8537_logo.jpg" alt="AK-47">
-                        </figure>
-                        <h5>AK-47</h5>
-                    </a>
-                </div>
+            <h2 class="title is-4">Burst Rifles</h2>
+            <div class="columns is-multiline is-centered" id="burst-rifles-grid"></div>
+        </div>
 
-                <div class="column is-one-quarter has-text-centered">
-                    <a href="../index.html" class="card">
-                        <figure class="image is-square">
-                            <img src="../images/yooli8537_logo.jpg" alt="Weapon 2">
-                        </figure>
-                        <h5>Weapon 2</h5>
-                    </a>
-                </div>
-
-                <div class="column is-one-quarter has-text-centered">
-                    <a href="../index.html" class="card">
-                        <figure class="image is-square">
-                            <img src="../images/yooli8537_logo.jpg" alt="Weapon 3">
-                        </figure>
-                        <h5>Weapon 3</h5>
-                    </a>
-                </div>
-
-                <div class="column is-one-quarter has-text-centered">
-                    <a href="../index.html" class="card">
-                        <figure class="image is-square">
-                            <img src="../images/yooli8537_logo.jpg" alt="Weapon 4">
-                        </figure>
-                        <h5>Weapon 4</h5>
-                    </a>
-                </div>
-            </div>
+        <!-- Snipers -->
+        <div class="container">
+            <h2 class="title is-4">Snipers</h2>
+            <div class="columns is-multiline is-centered" id="snipers-grid"></div>
         </div>
     </section>
-</body>
 
-<footer>
-    <h6>&copy;2025 Frenzy by Yooli8537. All rights reserved.</h6>
-</footer>
+    <!-- Weapon Info Modal -->
+    <div id="weapon-modal" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title" id="modal-title">Weapon Name</p>
+                <button class="delete" aria-label="close" id="modal-close"></button>
+            </header>
+            <section class="modal-card-body">
+                <figure class="image is-4by3">
+                    <img id="modal-image" src="../images/yooli8537_logo.jpg" alt="Weapon Image">
+                </figure>
+                <p id="modal-description">Here is some detailed info about the weapon, its stats, and usage tips.</p>
+                <ul id="modal-stats"></ul>
+            </section>
+            <footer class="modal-card-foot">
+                <a id="modal-readmore" class="button is-link" target="_blank">Read More</a>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script>
+        // Weapon Arrays
+        const assaultRifles = [
+            {
+                name: "AK-47",
+                image: "../images/yooli8537_logo.jpg",
+                description: "Reliable assault rifle with balanced stats.",
+                stats: ["Damage: 35", "Fire Rate: 600 RPM", "Range: 50m", "TTK: 3s"],
+                pageUrl: "../index.html"
+            },
+            {
+                name: "M4",
+                image: "../images/yooli8537_logo.jpg",
+                description: "Accurate and fast firing assault rifle.",
+                stats: ["Damage: 30", "Fire Rate: 650 RPM", "Range: 45m", "TTK: 2.8s"],
+                pageUrl: "../index.html"
+            }
+        ];
+
+        const burstRifles = [
+            {
+                name: "Burst Rifle 1",
+                image: "../images/yooli8537_logo.jpg",
+                description: "Shoots 3 rounds per trigger pull.",
+                stats: ["Damage: 25", "Fire Rate: 800 RPM", "Range: 30m", "TTK: 4s"],
+                pageUrl: "../index.html"
+            }
+        ];
+
+        const snipers = [
+            {
+                name: "Sniper 1",
+                image: "../images/yooli8537_logo.jpg",
+                description: "One-shot potential for headshots.",
+                stats: ["Damage: 90", "Fire Rate: 50 RPM", "Range: 100m", "TTK: 1.2s"],
+                pageUrl: "../index.html"
+            }
+        ];
+
+        // Populate Grids
+        function populateGrid(gridId, weapons) {
+            const grid = document.getElementById(gridId);
+            weapons.forEach(weapon => {
+                const col = document.createElement('div');
+                col.className = 'column is-one-quarter has-text-centered';
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.style.cursor = 'pointer';
+                card.innerHTML = `
+            <figure class="image is-square">
+                <img src="${weapon.image}" alt="${weapon.name}">
+            </figure>
+            <h5>${weapon.name}</h5>
+        `;
+                card.addEventListener('click', () => openWeaponModal(weapon));
+                col.appendChild(card);
+                grid.appendChild(col);
+            });
+        }
+
+        populateGrid('assault-rifles-grid', assaultRifles);
+        populateGrid('burst-rifles-grid', burstRifles);
+        populateGrid('snipers-grid', snipers);
+
+        // Modal Elements
+        const modal = document.getElementById('weapon-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalImage = document.getElementById('modal-image');
+        const modalDescription = document.getElementById('modal-description');
+        const modalStats = document.getElementById('modal-stats');
+        const modalReadMore = document.getElementById('modal-readmore');
+        const modalCloseBtn = document.getElementById('modal-close');
+
+        // Open modal function
+        function openWeaponModal(weapon) {
+            modalTitle.textContent = weapon.name;
+            modalImage.src = weapon.image;
+            modalImage.alt = weapon.name;
+            modalDescription.textContent = weapon.description;
+            modalStats.innerHTML = weapon.stats.map(stat => `<li>${stat}</li>`).join('');
+            modalReadMore.href = weapon.pageUrl;
+            modal.classList.add('is-active');
+        }
+
+        // Close modal function
+        function closeModal() {
+            modal.classList.remove('is-active');
+        }
+
+        // Event listeners
+        modalCloseBtn.addEventListener('click', closeModal);
+        modal.querySelector('.modal-background').addEventListener('click', closeModal);
+        document.addEventListener('keydown', (e) => {
+            if (e.key === "Escape") closeModal();
+        });
+
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <h6>&copy;2025 Frenzy by Yooli8537. All rights reserved.</h6>
+    </footer>
+</body>
 
 </html>
