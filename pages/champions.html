@@ -10,27 +10,323 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
-<header>
-    <nav>
-        <a href="../index.html" class="nav">Home</a> &nbsp;|&nbsp;
-        <a href="https://roblox.com" class="nav">Play Now!</a> &nbsp;|&nbsp;
-        <a href="champions.html" class="nav">Champions</a> &nbsp;|&nbsp;
-        <a href="weapons.html" class="nav">Weapons</a> &nbsp;|&nbsp;
-        <a href="archives.html" class="nav">Archives</a>
-        &nbsp;|&nbsp;<!-- /*  (Patch Notes, Community Stuff, Dev Log) */ -->
-        <a href="techniques.html" class="nav">Techniques</a> &nbsp;|&nbsp;
-        <a href="faq.html" class="nav">FAQ</a> &nbsp;|&nbsp;
-        <a href="https://github.com/Yooli8537/FrenzySite" class="nav">Report Issues</a>
-    </nav>
-    <img src="../images/yooli8537_logo.jpg" class="logo_circle">
-</header>
-
 <body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="../index.html" class="nav">Home</a> &nbsp;|&nbsp;
+            <a href="https://roblox.com" class="nav">Play Now!</a> &nbsp;|&nbsp;
+            <a href="champions.html" class="nav">Champions</a> &nbsp;|&nbsp;
+            <a href="characters.html" class="nav">Weapons</a> &nbsp;|&nbsp;
+            <a href="archives.html" class="nav">Archives</a>&nbsp;|&nbsp;
+            <!-- /*  (Patch Notes, Community Stuff, Dev Log) */ -->
+            <a href="techniques.html" class="nav">Techniques</a> &nbsp;|&nbsp;
+            <a href="faq.html" class="nav">FAQ</a> &nbsp;|&nbsp;
+            <a href="https://github.com/Yooli8537/FrenzySite" class="nav">Report Issues</a>
+        </nav>
+        <img src="../images/yooli8537_logo.jpg" class="logo_circle">
+    </header>
 
+    <!-- Main Content -->
+    <section class="section">
+        <div class="container">
+            <div class="pagetitle">
+                <h1>Champions</h1>
+                <h2>
+                    Frenzy has a lot of weapons to offer. Since the weapons page in-game shouldn't be too overwhelming,
+                    some less important stats and additional info isn't shown. This is why this page exists. Since
+                    there's more room to work with, players can more easily view all of the info they want on whatever
+                    weapon they want. Additionally, you can compare wepaons faster here, so that you can more quickly
+                    find out what weapons work best with what characters.
+                </h2>
+            </div>
+        </div>
+
+        <!-- Assault Rifles -->
+        <div class="container">
+            <div class="divider">
+                <h2>Common Champions</h2>
+                <h3>
+                    Assault rifles are the default weapon class. They fire hard, the fire fast, and they do it
+                    automatically. Every champion excluding legends has access to assault rifles. They are a reliable
+                    option that you really can't go wrong with.
+                </h3>
+            </div>
+            <div class="columns is-multiline is-centered" id="common-grid"></div>
+        </div>
+
+        <!-- Burst Rifles -->
+        <div class="container">
+            <div class="divider">
+                <h2>Rare Champions</h2>
+                <h3>
+                    Burst rifles are similar to assault rifles, but they only shoot a few bullets at a time,
+                    go on cooldown and then shoot again a second or so later. They are basically a direct
+                    counterpart to the assault rifle. You can play them like an assault rifle or you can play them the
+                    way that some people find annoying (that I love to do).
+                </h3>
+            </div>
+            <div class="columns is-multiline is-centered" id="rare-grid"></div>
+        </div>
+
+        <!-- DMRs -->
+        <div class="container">
+            <div class="divider">
+                <h2>Epic Champions</h2>
+                <h3>
+                    Epic are the most advanced champions that can be unlocked from the shop, costing between 30'000 and
+                    100'000 coins.
+                </h3>
+            </div>
+            <div class="columns is-multiline is-centered" id="epic-grid"></div>
+        </div>
+
+        <!-- Snipers -->
+        <div class="container">
+            <div class="divider">
+                <h2>Legends</h2>
+                <h3>
+                    Little more than a legend remains of these people. The only masters of their craft, their abilities
+                    refined to absolute perfection. Not much is known about them, wether they're driven by ambition,
+                    revenge or desire for power.<br>
+                    <p>Legends can only be unlocked by completing special missions.</p>
+                </h3>
+            </div>
+            <div class="columns is-multiline is-centered" id="legend-grid"></div>
+        </div>
+
+        <div class="container">
+            <div class="divider">
+                <h2>Beyond forgotten</h2>
+                <h3>
+                    Some legends don't have a glorious life like others. Their stories fill with tragedy and misfortune.
+                    The world robbed them of their purpose, and they want to bring it back.
+                </h3>
+            </div>
+            <div class="columns is-multiline is-centered" id="mythic-grid"></div>
+        </div>
+    </section>
+
+    <div id="character-modal" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title" id="modal-title">Character Name</p>
+                <button class="delete" aria-label="close" id="modal-close"></button>
+            </header>
+
+            <section class="modal-card-body">
+                <figure class="image is-4by3">
+                    <img id="modal-image" src="../images/yooli8537_logo.jpg" alt="Character Image">
+                </figure>
+                <p id="modal-description">Here is some detailed info about the character, its stats, and usage tips.</p>
+
+                <div id="modal-stats-section">
+                    <h4>Stats</h4>
+                    <ul id="modal-stats"></ul>
+                </div>
+
+                <div id="modal-abilities-section">
+                    <h4>Abilities</h4>
+                    <ul id="modal-abilities"></ul>
+                </div>
+            </section>
+
+            <footer class="modal-card-foot">
+                <a id="modal-readmore" class="button is-link" target="_blank">Read More</a>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        // Character Arrays
+        const common = [
+            {
+                name: "AK-47",
+                image: "../images/yooli8537_logo.jpg",
+                description: "The AK-47 is the default primary weapon in Frenzy. It's actually a pretty decent option, offering the most average stats so that it's always somewhat viable in any situation.",
+                stats: [
+                    "Damage: 35",
+                    "Headshot Multiplier: 2",
+                    "Fire Rate: 600 RPM",
+                    "Dropoff: 30m",
+                    "Spread: 4°"
+                ],
+                pageUrl: "../index.html"
+            },
+            {
+                name: "M4",
+                image: "../images/yooli8537_logo.jpg",
+                description: "Accurate and fast firing assault rifle.",
+                stats: [
+                    "Damage: 30",
+                    "Headshot Multiplier: 2",
+                    "Fire Rate: 650 RPM",
+                    "Dropoff: 45m",
+                    "Spread: 5°"
+                ],
+                pageUrl: "../index.html"
+            }
+        ];
+
+        const rare = [
+            {
+                name: "Burst Rifle 1",
+                image: "../images/yooli8537_logo.jpg",
+                description: "Shoots 3 rounds per trigger pull.",
+                stats: [
+                    "Damage: 25",
+                    "Headshot Multiplier: 2",
+                    "Fire Rate: 800 RPM",
+                    "Dropoff: 30m",
+                    "Spread: 3°"
+                ],
+                pageUrl: "../index.html"
+            }
+        ];
+
+        const epic = [
+            {
+                name: "Barrett",
+                image: "../images/yooli8537_logo.jpg",
+                description: "An absolute war machine. With the barrett by your side, nothing can stop you. Well maybe someone could shoot you, but other than that you're unstoppable.",
+                stats: [
+                    "Damage: 200",
+                    "Headshot Multiplier: 2.5",
+                    "Fire Rate: 30 RPM",
+                    "Dropoff: none",
+                    "Spread: 0°",
+                    "Setup time: 3s"
+                ],
+                pageUrl: "../index.html"
+            }
+        ];
+
+        const legend = [
+            {
+                name: "Barrett",
+                image: "../images/yooli8537_logo.jpg",
+                description: "An absolute war machine. With the barrett by your side, nothing can stop you. Well maybe someone could shoot you, but other than that you're unstoppable.",
+                stats: [
+                    "Damage: 200",
+                    "Headshot Multiplier: 2.5",
+                    "Fire Rate: 30 RPM",
+                    "Dropoff: none",
+                    "Spread: 0°",
+                    "Setup time: 3s"
+                ],
+                pageUrl: "../index.html"
+            }
+        ];
+
+        const mythic = [
+            {
+                name: "Spirit Sailor",
+                image: "../images/yooli8537_logo.jpg",
+                description: "The ocean took his life. The second realm took his soul. The second realm isn’t hell - it’s the echo of every world that’s ever ended. There, time folds like waves and memories rot into salt. Now he sails between both, dragging the world beneath the waves with him. Those who fall to his blade are not slain; they are recruited. Once the veil breaks, the tide returns for the Spirit Sailor.",
+                stats: [
+                    "Health: 500",
+                    "Loadout: Spirit Dagger"
+                ],
+                abilities: [
+                    "Passive: 50% less regeneration but starts 3s after leaving combat.",
+                    "Passive: Sliding charges your next jump up, allowing you to jump much further and faster."
+                ],
+                pageUrl: "../index.html"
+            }
+        ];
+
+        // Add other arrays: rare, epic, legend, mythic (same structure)
+
+        // Populate Grids
+        function populateGrid(gridId, characters) {
+            const grid = document.getElementById(gridId);
+            characters.forEach(char => {
+                const col = document.createElement('div');
+                col.className = 'column is-one-quarter has-text-centered';
+
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.style.cursor = 'pointer';
+                card.innerHTML = `
+                <figure class="image is-square">
+                    <img src="${char.image}" alt="${char.name}">
+                </figure>
+                <h5>${char.name}</h5>
+            `;
+
+                card.addEventListener('click', () => openCharacterModal(char));
+                col.appendChild(card);
+                grid.appendChild(col);
+            });
+        }
+
+        populateGrid('common-grid', common);
+        populateGrid('rare-grid', rare);       // Add your 'rare' array
+        populateGrid('epic-grid', epic);       // Add your 'epic' array
+        populateGrid('legend-grid', legend);   // Add your 'legend' array
+        populateGrid('mythic-grid', mythic);   // Add your 'mythic' array
+
+        // Repeat for rare-grid, epic-grid, legend-grid, mythic-grid
+
+        // Modal Elements
+        const modal = document.getElementById('character-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalImage = document.getElementById('modal-image');
+        const modalDescription = document.getElementById('modal-description');
+        const modalStats = document.getElementById('modal-stats');
+        const modalAbilities = document.getElementById('modal-abilities');
+        const modalReadMore = document.getElementById('modal-readmore');
+        const modalCloseBtn = document.getElementById('modal-close');
+        const modalBackground = modal.querySelector('.modal-background');
+
+        // Open Modal
+        function openCharacterModal(char) {
+            modalTitle.textContent = char.name;
+            modalImage.src = char.image;
+            modalImage.alt = char.name;
+            modalDescription.innerHTML = char.description || "";
+
+            // Stats
+            if (char.stats && char.stats.length > 0) {
+                modalStats.innerHTML = char.stats.map(stat => `<li>${stat}</li>`).join('');
+                document.getElementById('modal-stats-section').style.display = 'block';
+            } else {
+                document.getElementById('modal-stats-section').style.display = 'none';
+            }
+
+            // Abilities
+            if (char.abilities && char.abilities.length > 0) {
+                modalAbilities.innerHTML = char.abilities.map(ability => `<li>${ability}</li>`).join('');
+                document.getElementById('modal-abilities-section').style.display = 'block';
+            } else {
+                document.getElementById('modal-abilities-section').style.display = 'none';
+            }
+
+            // Read More
+            modalReadMore.href = char.pageUrl || "#";
+
+            // Show modal
+            modal.classList.add('is-active');
+        }
+
+        // Close Modal
+        function closeModal() {
+            modal.classList.remove('is-active');
+        }
+
+        // Event Listeners
+        modalCloseBtn.addEventListener('click', closeModal);
+        modalBackground.addEventListener('click', closeModal);
+        document.addEventListener('keydown', (e) => {
+            if (e.key === "Escape") closeModal();
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <h6>&copy;2025 Frenzy by Yooli8537. All rights reserved.</h6>
+    </footer>
 </body>
-
-<footer>
-    <h6>&copy;2025 Frenzy by Yooli8537. All rights reserved.</h6>
-</footer>
 
 </html>
