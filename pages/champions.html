@@ -223,7 +223,7 @@
             {
                 name: "Spirit Sailor",
                 image: "../images/yooli8537_logo.jpg",
-                description: "The ocean took his life. The second realm took his soul. The second realm isn’t hell - it’s the echo of every world that’s ever ended. There, time folds like waves and memories rot into salt. Now he sails between both, dragging the world beneath the waves with him. Those who fall to his blade are not slain; they are recruited. Once the veil breaks, the tide returns for the Spirit Sailor.",
+                description: "He's a victim of the forces of nature. The mountains took his life. The oceans took his body. The second realm took his soul. \nThe second realm isn’t hell - it’s the echo of every world that’s ever ended. There, time folds like waves and memories rot into salt. Now he sails between both, dragging the world beneath the waves with him. \nThose who fall to his blade are not slain; they are recruited. \nOnce the veil breaks, the tide returns for the Spirit Sailor.",
                 stats: [
                     "Health: 500",
                     "Loadout: Spirit Dagger"
@@ -285,7 +285,7 @@
             modalTitle.textContent = char.name;
             modalImage.src = char.image;
             modalImage.alt = char.name;
-            modalDescription.innerHTML = char.description || "";
+            modalDescription.innerHTML = (char.description || "").replace(/\n/g, "<br>");
 
             // Stats
             if (char.stats && char.stats.length > 0) {
