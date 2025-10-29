@@ -149,6 +149,23 @@ a:hover {
   color: #fff;
 }
 
+/* Tables */
+
+table.abilities-table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+table.abilities-table th:first-child,
+table.abilities-table td:first-child {
+  width: 25%; /* Name column */
+}
+
+table.abilities-table th:last-child,
+table.abilities-table td:last-child {
+  width: 75%; /* Description column */
+}
+
 /* Button Shimmer Effect */
 
 .button.is-shimmer {
